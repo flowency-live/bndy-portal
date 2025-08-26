@@ -1,0 +1,151 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  
+    match /rewired_setlist/{docId} {
+      allow read, write: if true;
+    }
+  
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+        ('bndy_admin' in request.auth.token.roles || 
+         'global_admin' in request.auth.token.roles);
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isMemberOf(artistId) {
+      return isAuthenticated() && 
+        exists(/databases/$(database)/documents/bndy_artists/$(artistId)/members/$(request.auth.uid));
+    }
+    
+    function isStaffOf(venueId) {
+      return isAuthenticated() && 
+        exists(/databases/$(database)/documents/bndy_venues/$(venueId)/members/$(request.auth.uid));
+    }
+    
+    function isCollectiveMemberOf(collectiveId) {
+      return isAuthenticated() && 
+        exists(/databases/$(database)/documents/bndy_collectives/$(collectiveId)/members/$(request.auth.uid));
+    }
+    
+    function hasRole(role) {
+      return isAuthenticated() && 
+        (role in request.auth.token.roles);
+    }
+    
+    function isGigGoer() {
+      return isAuthenticated() && 
+        ('live_giggoer' in request.auth.token.roles || 
+         'live_builder' in request.auth.token.roles || 
+         'live_admin' in request.auth.token.roles);
+    }
+    
+    // DEVELOPMENT MODE RULES - REMOVE BEFORE PRODUCTION
+    // These rules allow read access to all collections for development purposes
+    match /bndy_users/{userId} {
+      allow read: if true; // Temporarily allow read access for development
+      allow create: if true; // Allow creation without auth for development
+      allow update, delete: if true; // Allow updates without auth for development
+      
+      // User subcollections
+      match /{subCollection}/{docId} {
+        allow read: if true; // Temporarily allow read access for development
+        allow write: if true; // Allow writes without auth for development
+      }
+    }
+    
+    // Authorization codes collection - CRITICAL FOR AUTH FLOW
+    match /bndy_auth_codes/{code} {
+      // Allow all operations for development
+      allow read, write: if true;
+    }
+    
+    // Artist collection - DEVELOPMENT MODE - FULLY PERMISSIVE FOR DEV
+    match /bndy_artists/{artistId} {
+      allow read: if true; // Public read access for basic artist info
+      allow create: if true; // Allow creation without auth for development
+      allow update: if true; // Allow updates without auth for development
+      allow delete: if true; // Allow deletion without auth for development
+      
+      // Artist subcollections - DEVELOPMENT MODE - FULLY PERMISSIVE
+      match /{subCollection}/{docId} {
+        allow read: if true; // Temporarily allow read access for development
+        allow write: if true; // Allow writes without auth for development
+      }
+    }
+    
+    // Venue collection - DEVELOPMENT MODE
+    match /bndy_venues/{venueId} {
+      allow read: if true; // Public read access
+      allow create: if true; // Allow creation without auth for development
+      allow update: if true; // Allow updates without auth for development
+      allow delete: if true; // Allow deletion without auth for development
+      
+      // Venue subcollections - DEVELOPMENT MODE
+      match /{subCollection}/{docId} {
+        allow read: if true; // Temporarily allow read access for development
+        allow write: if true; // Allow writes without auth for development
+      }
+    }
+    
+    // Studio collection - DEVELOPMENT MODE
+    match /bndy_studios/{studioId} {
+      allow read: if true; // Public read access
+      allow create: if true; // Allow creation without auth for development
+      allow update: if true; // Allow updates without auth for development
+      allow delete: if true; // Allow deletion without auth for development
+      
+      // Studio subcollections - DEVELOPMENT MODE
+      match /{subCollection}/{docId} {
+        allow read: if true; // Temporarily allow read access for development
+        allow write: if true; // Allow writes without auth for development
+      }
+    }
+    
+    // Collective collection - DEVELOPMENT MODE
+    match /bndy_collectives/{collectiveId} {
+      allow read: if true; // Public read access
+      allow create: if true; // Allow creation without auth for development
+      allow update: if true; // Allow updates without auth for development
+      allow delete: if true; // Allow deletion without auth for development
+      
+      // Collective subcollections - DEVELOPMENT MODE
+      match /{subCollection}/{docId} {
+        allow read: if true; // Temporarily allow read access for development
+        allow write: if true; // Allow writes without auth for development
+      }
+    }
+    
+    // Base songs collection - DEVELOPMENT MODE
+    match /bndy_songs/{songId} {
+      allow read: if true; // Temporarily allow read access for development
+      allow create: if true; // Allow creation without auth for development
+      allow update, delete: if true; // Allow updates without auth for development
+    }
+    
+    // Public events collection - DEVELOPMENT MODE
+    match /bndy_public_events/{eventId} {
+      allow read: if true; // Public read access
+      allow write: if true; // Allow writes without auth for development
+    }
+    
+    // DEVELOPMENT MODE - Allow read/write access to any bndy_ collection
+    // REMOVE BEFORE PRODUCTION
+    match /{collection}/{docId} {
+      allow read, write: if collection.startsWith("bndy_");
+      
+      // Allow read/write access to all subcollections
+      match /{subCollection}/{subDocId} {
+        allow read, write: if collection.startsWith("bndy_");
+      }
+    }
+  }
+}

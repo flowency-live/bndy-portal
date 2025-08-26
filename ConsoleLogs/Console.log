@@ -1,0 +1,136 @@
+main-app.js?v=1756155367970:1170 Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
+C:\VSProjects\bndy-ui\auth\config.ts:15 [bndy-ui] Running in browser context, hostname: app.local.bndy.test
+C:\VSProjects\bndy-ui\auth\config.ts:19 [bndy-ui] isLocalhost: false
+C:\VSProjects\bndy-ui\auth\config.ts:20 [bndy-ui] isLocalBndyTest: true
+C:\VSProjects\bndy-ui\auth\config.ts:31 [bndy-ui] Environment mode: dev
+C:\VSProjects\bndy-ui\auth\config.ts:85 [bndy-ui] CENTRESTAGE_URL using local.bndy.test domain: https://local.bndy.test:3000
+C:\VSProjects\bndy-ui\auth\config.ts:85 [bndy-ui] BACKSTAGE_URL using local.bndy.test domain: https://local.bndy.test:3001
+C:\VSProjects\bndy-ui\auth\config.ts:85 [bndy-ui] FRONTSTAGE_URL using local.bndy.test domain: https://local.bndy.test:3002
+C:\VSProjects\bndy-portal\src\app\providers.tsx:16 [Firebase] Initializing production Firebase connection
+C:\VSProjects\bndy-portal\src\app\providers.tsx:17 [Firebase] Project ID: bandflow2025
+C:\VSProjects\bndy-portal\src\app\providers.tsx:18 [Firebase] Auth Domain: bndy.co.uk
+C:\VSProjects\bndy-ui\auth\firebaseClient.ts:21 Initializing Firebase client for bndy-ui
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:140 [Auth] Setting up auth state listener
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:141 [Auth] Firestore instance available in listener setup: true
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:186 [Auth] Auth state listener set up
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:145 [Auth] Auth state changed: User OK5qzPZQu8UnPLgd5WaSuw97o8r1 (jason@flowency.co.uk)
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:150 [Auth] User authenticated, checking Firestore availability
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:151 [Auth] Firestore instance available in listener callback: true
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:152 [Auth] Collection name for users: bndy_users
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:156 [Auth] Attempting to add/update user in Firestore from onAuthStateChanged
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:78 [Auth] Attempting to add/update user in Firestore: OK5qzPZQu8UnPLgd5WaSuw97o8r1 jason@flowency.co.uk
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:79 [Auth] Firestore instance available in addUserToFirestore: true
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:80 [Auth] Collection name for users: bndy_users
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:85 [Auth] Got Firestore instance directly: true
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:89 [Auth] Created document reference for: bndy_users/OK5qzPZQu8UnPLgd5WaSuw97o8r1
+image-loader.js:67 Uncaught Error: Invalid src prop (https://lh3.googleusercontent.com/a-/ALV-UjU5PQGJycnbHjfIpu6747jzVlQ7kaScjUVyjwcfEUnrBwBCxqdYMWfwK_3UHJMytKIKIhtU-Rb1jaN-Rq7TxzyYkC5NXDV4rxJiR5HZueL8KA2c9FiXrByWzJKpmxZe_AiC7o6rntc9HfbMA7rZ0FPe1qWlki66QxFMarP_dujw_GESQhAGY4QRcmH-NQxqw3YhyqqjM-WEY1TEOBB8-grt_gHA8N2gmWTLl_yiTIs1bVwcVtxiVrGocxgDSiASGrzJF7lZjLaknMkoNHwEYXb_PxacTNd2OeWwroBXPiBx2hCeaoL8hrYJ2ypzFPw0KtidEvsmpyNWecofOSUzAcuoE1d2BTMNiSDxaMzX6eARs7wvC240H0v2zT0OD8UWOGoq0HoMT51m-wFcv0mgc0swtBps9oW-XHyPAEchwF4xuXrLB6iR4OPeUVDP8sviDYO_WilGySlodgUPkdUqgu1vE5-i0Q7jW7FHcTKAcxTuGciShLW9TUoK-MbJOysF0nndbSUmLOKGfRMbP_KaXXT08Aq_pT_J4WzwfyQYROO_Jr09GY-6zSLCsJ5esPdvS0Jh02RSyOVEDTEewgiilUrBjsrFgxI9b7AdfZpyIcpwxLDhH8B1B2ijeLX5qf00XPdYZHWmD8WBz8VPoTTtuYkCYvqIqa0CpzTaJFG1CSdReh2awdUpR3V-vICF3sqe5iPhupYNXTXdnG65HW1p3mpQ5aD41Xw0AWpq2E6WJjNRDT2cKFQVclI41HHDWvn6XlDpuvacmrhn7ysSNyGmgAPbaV_QKUcbw5AMQKm9cXd-3cxIEsX85EXY1Llii7H5FnUTryC_ZmFd1qqhYCbSevvCZY1leMnppLwOwCnZDiKyE6fG1HmQuOV3aTkFtbOHP4ykKa4wymLgG76_DsWMhDtHSUwtBxIL0WtMJ0ZXUc7lXbshcmyotmCv7jVBjzO8GqtS7ZAZIj3iyj5D1IyxXT8Yz9wu0fmk=s96-c) on `next/image`, hostname "lh3.googleusercontent.com" is not configured under images in your `next.config.js`
+See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host
+    at defaultLoader (image-loader.js:67:49)
+    at eval (get-img-props.js:108:36)
+    at Array.map (<anonymous>)
+    at generateImgAttrs (get-img-props.js:108:24)
+    at getImgProps (get-img-props.js:502:27)
+    at eval (image-component.js:272:82)
+    at Object.react_stack_bottom_frame (react-dom-client.development.js:23584:20)
+    at renderWithHooks (react-dom-client.development.js:6793:22)
+    at updateForwardRef (react-dom-client.development.js:8807:19)
+    at beginWork (react-dom-client.development.js:11197:18)
+    at runWithFiberInDEV (react-dom-client.development.js:872:30)
+    at performUnitOfWork (react-dom-client.development.js:15727:22)
+    at workLoopSync (react-dom-client.development.js:15547:41)
+    at renderRootSync (react-dom-client.development.js:15527:11)
+    at performWorkOnRoot (react-dom-client.development.js:15034:44)
+    at performWorkOnRootViaSchedulerTask (react-dom-client.development.js:16816:7)
+    at MessagePort.performWorkUntilDeadline (scheduler.development.js:45:48)
+defaultLoader @ image-loader.js:67
+eval @ get-img-props.js:108
+generateImgAttrs @ get-img-props.js:108
+getImgProps @ get-img-props.js:502
+eval @ image-component.js:272
+react_stack_bottom_frame @ react-dom-client.development.js:23584
+renderWithHooks @ react-dom-client.development.js:6793
+updateForwardRef @ react-dom-client.development.js:8807
+beginWork @ react-dom-client.development.js:11197
+runWithFiberInDEV @ react-dom-client.development.js:872
+performUnitOfWork @ react-dom-client.development.js:15727
+workLoopSync @ react-dom-client.development.js:15547
+renderRootSync @ react-dom-client.development.js:15527
+performWorkOnRoot @ react-dom-client.development.js:15034
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16816
+performWorkUntilDeadline @ scheduler.development.js:45
+<ForwardRef>
+exports.jsxDEV @ react-jsx-dev-runtime.development.js:323
+ProfileTab @ C:\VSProjects\bndy-portal\src\app\account\components\ProfileTab.tsx:34
+react_stack_bottom_frame @ react-dom-client.development.js:23584
+renderWithHooksAgain @ react-dom-client.development.js:6893
+renderWithHooks @ react-dom-client.development.js:6805
+updateFunctionComponent @ react-dom-client.development.js:9247
+beginWork @ react-dom-client.development.js:10858
+runWithFiberInDEV @ react-dom-client.development.js:872
+performUnitOfWork @ react-dom-client.development.js:15727
+workLoopSync @ react-dom-client.development.js:15547
+renderRootSync @ react-dom-client.development.js:15527
+performWorkOnRoot @ react-dom-client.development.js:15034
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16816
+performWorkUntilDeadline @ scheduler.development.js:45
+<ProfileTab>
+exports.jsxDEV @ react-jsx-dev-runtime.development.js:323
+AccountPage @ C:\VSProjects\bndy-portal\src\app\account\page.tsx:108
+react_stack_bottom_frame @ react-dom-client.development.js:23584
+renderWithHooksAgain @ react-dom-client.development.js:6893
+renderWithHooks @ react-dom-client.development.js:6805
+updateFunctionComponent @ react-dom-client.development.js:9247
+beginWork @ react-dom-client.development.js:10858
+runWithFiberInDEV @ react-dom-client.development.js:872
+performUnitOfWork @ react-dom-client.development.js:15727
+workLoopSync @ react-dom-client.development.js:15547
+renderRootSync @ react-dom-client.development.js:15527
+performWorkOnRoot @ react-dom-client.development.js:15034
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16816
+performWorkUntilDeadline @ scheduler.development.js:45
+<AccountPage>
+exports.jsx @ react-jsx-runtime.development.js:323
+ClientPageRoot @ client-page.js:20
+react_stack_bottom_frame @ react-dom-client.development.js:23584
+renderWithHooksAgain @ react-dom-client.development.js:6893
+renderWithHooks @ react-dom-client.development.js:6805
+updateFunctionComponent @ react-dom-client.development.js:9247
+beginWork @ react-dom-client.development.js:10807
+runWithFiberInDEV @ react-dom-client.development.js:872
+performUnitOfWork @ react-dom-client.development.js:15727
+workLoopConcurrentByScheduler @ react-dom-client.development.js:15721
+renderRootConcurrent @ react-dom-client.development.js:15696
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16816
+performWorkUntilDeadline @ scheduler.development.js:45
+"use client"
+Function.all @ VM27394 <anonymous>:1
+Function.all @ VM27394 <anonymous>:1
+initializeElement @ react-server-dom-webpack-client.browser.development.js:1343
+"use server"
+ResponseInstance @ react-server-dom-webpack-client.browser.development.js:2041
+createResponseFromOptions @ react-server-dom-webpack-client.browser.development.js:3094
+exports.createFromReadableStream @ react-server-dom-webpack-client.browser.development.js:3478
+eval @ app-index.js:130
+(app-pages-browser)/./node_modules/next/dist/client/app-index.js @ main-app.js?v=1756155367970:160
+options.factory @ webpack.js:1
+__webpack_require__ @ webpack.js:1
+fn @ webpack.js:1
+eval @ app-next-dev.js:14
+eval @ app-bootstrap.js:59
+loadScriptsInSequence @ app-bootstrap.js:24
+appBootstrap @ app-bootstrap.js:53
+eval @ app-next-dev.js:13
+(app-pages-browser)/./node_modules/next/dist/client/app-next-dev.js @ main-app.js?v=1756155367970:182
+options.factory @ webpack.js:1
+__webpack_require__ @ webpack.js:1
+__webpack_exec__ @ main-app.js?v=1756155367970:1878
+(anonymous) @ main-app.js?v=1756155367970:1879
+webpackJsonpCallback @ webpack.js:1
+(anonymous) @ main-app.js?v=1756155367970:9
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:94 [Auth] Successfully retrieved user document
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:95 [Auth] User document exists? true
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:118 [Auth] Updating last login for existing user
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:124 [Auth] Updated last login for user OK5qzPZQu8UnPLgd5WaSuw97o8r1
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:158 [Auth] Successfully added/updated user in Firestore from onAuthStateChanged
+C:\VSProjects\bndy-ui\auth\auth-context.tsx:175 [Auth] No session login callback provided

@@ -1,0 +1,22 @@
+"use client";
+
+import { useAuth } from "@/auth/AuthContext";
+
+export default function Home() {
+  const { user } = useAuth();
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center p-8">
+      <main>
+        <h1 className="text-4xl font-bold mb-4">
+          Welcome to Bndy Portal
+        </h1>
+        {user ? (
+          <p>Welcome back, {user.displayName || user.email}</p>
+        ) : (
+          <p>Please sign in to continue</p>
+        )}
+      </main>
+    </div>
+  );
+}

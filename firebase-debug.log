@@ -1,0 +1,312 @@
+[debug] [2025-08-22T16:28:58.988Z] ----------------------------------------------------------------------
+[debug] [2025-08-22T16:28:58.990Z] Command:       C:\nvm4w\nodejs\node.exe C:\Users\jason\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2025-08-22T16:28:58.990Z] CLI Version:   13.29.1
+[debug] [2025-08-22T16:28:58.991Z] Platform:      win32
+[debug] [2025-08-22T16:28:58.991Z] Node Version:  v18.20.6
+[debug] [2025-08-22T16:28:58.992Z] Time:          Fri Aug 22 2025 17:28:58 GMT+0100 (British Summer Time)
+[debug] [2025-08-22T16:28:58.992Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-22T16:28:59.108Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-22T16:28:59.109Z] > authorizing via signed-in user (jason@flowency.co.uk)
+[debug] [2025-08-22T16:28:59.476Z] java version "23.0.1" 2024-10-15
+
+[debug] [2025-08-22T16:28:59.477Z] Java(TM) SE Runtime Environment (build 23.0.1+11-39)
+Java HotSpot(TM) 64-Bit Server VM (build 23.0.1+11-39, mixed mode, sharing)
+
+[debug] [2025-08-22T16:28:59.518Z] Parsed Java major version: 23
+[info] i  emulators: Starting emulators: auth, functions, firestore, hosting, storage, extensions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, hosting, storage, extensions"}}
+[debug] [2025-08-22T16:28:59.521Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:28:59.521Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:28:59.523Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/bandflow2025 [none]
+[debug] [2025-08-22T16:29:00.429Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/bandflow2025 200
+[debug] [2025-08-22T16:29:00.429Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/bandflow2025 {"projectNumber":"146111307675","projectId":"bandflow2025","lifecycleState":"ACTIVE","name":"bndy","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2024-12-15T17:52:12.844493Z","parent":{"type":"organization","id":"807906734113"}}
+[debug] [2025-08-22T16:29:00.451Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:29:00.451Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:29:00.451Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:29:00.451Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:29:00.451Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:29:00.451Z] [storage] Storage Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:29:00.452Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-08-22T16:29:00.457Z] [hub] writing locator at C:\Users\jason\AppData\Local\Temp\hub-bandflow2025.json
+[debug] [2025-08-22T16:29:00.467Z] [Extensions] Started Extensions emulator, this is a noop.
+[debug] [2025-08-22T16:29:00.471Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:29:00.471Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:29:00.472Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:29:00.472Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, database, pubsub, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, database, pubsub, dataconnect\u001b[22m"}}
+[debug] [2025-08-22T16:29:00.498Z] defaultcredentials: writing to file C:\Users\jason\AppData\Roaming\firebase\jason_flowency_co.uk_application_default_credentials.json
+[debug] [2025-08-22T16:29:00.502Z] Setting GAC to C:\Users\jason\AppData\Roaming\firebase\jason_flowency_co.uk_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\jason\\AppData\\Roaming\\firebase\\jason_flowency_co.uk_application_default_credentials.json"}}
+[debug] [2025-08-22T16:29:00.502Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:29:00.503Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:29:00.503Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/adminSdkConfig [none]
+[debug] [2025-08-22T16:29:00.979Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/adminSdkConfig 200
+[debug] [2025-08-22T16:29:00.980Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/adminSdkConfig {"projectId":"bandflow2025","storageBucket":"bandflow2025.firebasestorage.app"}
+[debug] [2025-08-22T16:29:01.037Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-08-22T16:29:01.037Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2025-08-22T16:29:01.037Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\jason\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.19.8.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","bandflow2025","--rules","C:\\VSProjects\\bndy-portal\\firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false,"shell":false,"port":8080} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\jason\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.19.8.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"bandflow2025\",\"--rules\",\"C:\\\\VSProjects\\\\bndy-portal\\\\firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false,\"port\":8080}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[info] +  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2025-08-22T16:29:12.265Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-08-22T16:29:13.451Z] Temp file directory for storage emulator: C:\Users\jason\AppData\Local\Temp/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: C:\\Users\\jason\\AppData\\Local\\Temp/firebase/storage/blobs"}}
+[debug] [2025-08-22T16:29:13.458Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:29:13.458Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:29:13.459Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/bandflow2025/sites 
+[debug] [2025-08-22T16:29:14.390Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/bandflow2025/sites 200
+[debug] [2025-08-22T16:29:14.391Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/bandflow2025/sites {"sites":[{"name":"projects/bandflow2025/sites/bandflow2025","defaultUrl":"https://bandflow2025.web.app","appId":"1:146111307675:web:b8f7aa40d33b0e21994b3e","type":"DEFAULT_SITE"}]}
+[debug] [2025-08-22T16:29:14.391Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:29:14.391Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:29:14.391Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/webApps/1:146111307675:web:b8f7aa40d33b0e21994b3e/config [none]
+[debug] [2025-08-22T16:29:15.113Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/webApps/1:146111307675:web:b8f7aa40d33b0e21994b3e/config 200
+[debug] [2025-08-22T16:29:15.115Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/webApps/1:146111307675:web:b8f7aa40d33b0e21994b3e/config {"projectId":"bandflow2025","appId":"1:146111307675:web:b8f7aa40d33b0e21994b3e","storageBucket":"bandflow2025.firebasestorage.app","apiKey":"AIzaSyAoRzr1ZyidP8UZVawOVvc0jx9jMYi1cis","authDomain":"bandflow2025.firebaseapp.com","messagingSenderId":"146111307675","measurementId":"G-4C9XEXTQ93"}
+[debug] [2025-08-22T16:29:15.135Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:29:15.135Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:29:15.136Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025 [none]
+[debug] [2025-08-22T16:29:15.372Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025 200
+[debug] [2025-08-22T16:29:15.372Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025 {"projectId":"bandflow2025","projectNumber":"146111307675","displayName":"bndy","name":"projects/bandflow2025","resources":{"hostingSite":"bandflow2025"},"state":"ACTIVE","etag":"1_8c2d21fc-7ddc-46a9-876a-882e798cbe82"}
+[info] i  hosting[bandflow2025]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[bandflow2025]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2025-08-22T16:29:15.421Z] [Extensions] Connecting Extensions emulator, this is a noop.
+[info] i  functions: Watching "C:\VSProjects\bndy-portal\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\VSProjects\\bndy-portal\\functions\" for Cloud Functions..."}}
+[debug] [2025-08-22T16:29:15.429Z] Validating nodejs source
+[debug] [2025-08-22T16:29:16.608Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-08-22T16:29:16.608Z] Building nodejs source
+[debug] [2025-08-22T16:29:16.608Z] Failed to find version of module node: reached end of search path C:\VSProjects\bndy-portal\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "18". Using node@18 from host. 
+[debug] [2025-08-22T16:29:16.611Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-22T16:29:16.623Z] Found firebase-functions binary at 'C:\VSProjects\bndy-portal\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8353
+
+[debug] [2025-08-22T16:29:17.215Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-08-22T16:29:17.245Z] defaultcredentials: writing to file C:\Users\jason\AppData\Roaming\firebase\jason_flowency_co.uk_application_default_credentials.json
+[debug] [2025-08-22T16:29:17.246Z] Setting GAC to C:\Users\jason\AppData\Roaming\firebase\jason_flowency_co.uk_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\jason\\AppData\\Roaming\\firebase\\jason_flowency_co.uk_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[debug] [2025-08-22T16:29:17.256Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED ::1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬──────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI              │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth       │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions  │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore  │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5000 │ n/a                              │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Storage        │ 127.0.0.1:9199 │ http://127.0.0.1:4000/storage    │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Extensions     │ 127.0.0.1:5001 │ http://127.0.0.1:4000/extensions │
+└────────────────┴────────────────┴──────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+┌─────────────────────────┬───────────────┬─────────────────────┐
+│ Extension Instance Name │ Extension Ref │ View in Emulator UI │
+└─────────────────────────┴───────────────┴─────────────────────┘
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-08-22T16:29:58.625Z] Received signal SIGHUP 1
+[info]  
+[info] i  emulators: Received SIGHUP for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGHUP signal again to stop right now. 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  extensions: Stopping Extensions Emulator {"metadata":{"emulator":{"name":"extensions"},"message":"Stopping Extensions Emulator"}}
+[debug] [2025-08-22T16:29:58.631Z] [Extensions] Stopping Extensions emulator, this is a noop.
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  hosting: Stopping Hosting Emulator {"metadata":{"emulator":{"name":"hosting"},"message":"Stopping Hosting Emulator"}}
+[info] i  firestore: Stopping Firestore Emulator {"metadata":{"emulator":{"name":"firestore"},"message":"Stopping Firestore Emulator"}}
+[warn] !  Firestore Emulator has exited upon receiving signal: SIGINT 
+[info] i  auth: Stopping Authentication Emulator {"metadata":{"emulator":{"name":"auth"},"message":"Stopping Authentication Emulator"}}
+[info] i  storage: Stopping Storage Emulator {"metadata":{"emulator":{"name":"storage"},"message":"Stopping Storage Emulator"}}
+[debug] [2025-08-22T16:29:58.643Z] Stopping rules runtime. {"metadata":{"emulator":{"name":"storage"},"message":"Stopping rules runtime."}}
+[info] i  eventarc: Stopping Eventarc Emulator {"metadata":{"emulator":{"name":"eventarc"},"message":"Stopping Eventarc Emulator"}}
+[info] i  tasks: Stopping Cloud Tasks Emulator {"metadata":{"emulator":{"name":"tasks"},"message":"Stopping Cloud Tasks Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2025-08-22T16:29:58.652Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED ::1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[debug] [2025-08-22T16:31:39.552Z] ----------------------------------------------------------------------
+[debug] [2025-08-22T16:31:39.554Z] Command:       C:\nvm4w\nodejs\node.exe C:\Users\jason\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2025-08-22T16:31:39.555Z] CLI Version:   13.29.1
+[debug] [2025-08-22T16:31:39.555Z] Platform:      win32
+[debug] [2025-08-22T16:31:39.555Z] Node Version:  v18.20.6
+[debug] [2025-08-22T16:31:39.557Z] Time:          Fri Aug 22 2025 17:31:39 GMT+0100 (British Summer Time)
+[debug] [2025-08-22T16:31:39.557Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-22T16:31:39.686Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-22T16:31:39.687Z] > authorizing via signed-in user (jason@flowency.co.uk)
+[debug] [2025-08-22T16:31:39.831Z] java version "23.0.1" 2024-10-15
+Java(TM) SE Runtime Environment (build 23.0.1+11-39)
+
+[debug] [2025-08-22T16:31:39.832Z] Java HotSpot(TM) 64-Bit Server VM (build 23.0.1+11-39, mixed mode, sharing)
+
+[debug] [2025-08-22T16:31:39.852Z] Parsed Java major version: 23
+[info] i  emulators: Starting emulators: auth, functions, firestore, hosting, storage, extensions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, hosting, storage, extensions"}}
+[debug] [2025-08-22T16:31:39.855Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:39.855Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:39.857Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/bandflow2025 [none]
+[debug] [2025-08-22T16:31:40.619Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/bandflow2025 200
+[debug] [2025-08-22T16:31:40.619Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/bandflow2025 {"projectNumber":"146111307675","projectId":"bandflow2025","lifecycleState":"ACTIVE","name":"bndy","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2024-12-15T17:52:12.844493Z","parent":{"type":"organization","id":"807906734113"}}
+[debug] [2025-08-22T16:31:40.643Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:31:40.643Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:31:40.644Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:31:40.644Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:31:40.644Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:31:40.644Z] [storage] Storage Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:31:40.644Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-08-22T16:31:40.652Z] [hub] writing locator at C:\Users\jason\AppData\Local\Temp\hub-bandflow2025.json
+[debug] [2025-08-22T16:31:40.662Z] [Extensions] Started Extensions emulator, this is a noop.
+[debug] [2025-08-22T16:31:40.668Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:31:40.668Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:31:40.668Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-08-22T16:31:40.668Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, database, pubsub, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, database, pubsub, dataconnect\u001b[22m"}}
+[debug] [2025-08-22T16:31:40.673Z] defaultcredentials: writing to file C:\Users\jason\AppData\Roaming\firebase\jason_flowency_co.uk_application_default_credentials.json
+[debug] [2025-08-22T16:31:40.676Z] Setting GAC to C:\Users\jason\AppData\Roaming\firebase\jason_flowency_co.uk_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\jason\\AppData\\Roaming\\firebase\\jason_flowency_co.uk_application_default_credentials.json"}}
+[debug] [2025-08-22T16:31:40.677Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:40.677Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:40.677Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/adminSdkConfig [none]
+[debug] [2025-08-22T16:31:41.107Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/adminSdkConfig 200
+[debug] [2025-08-22T16:31:41.107Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/adminSdkConfig {"projectId":"bandflow2025","storageBucket":"bandflow2025.firebasestorage.app"}
+[debug] [2025-08-22T16:31:41.161Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-08-22T16:31:41.162Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2025-08-22T16:31:41.162Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\jason\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.19.8.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","bandflow2025","--rules","C:\\VSProjects\\bndy-portal\\firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false,"shell":false,"port":8080} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\jason\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.19.8.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"bandflow2025\",\"--rules\",\"C:\\\\VSProjects\\\\bndy-portal\\\\firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false,\"port\":8080}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[info] +  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2025-08-22T16:31:51.957Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-08-22T16:31:53.038Z] Temp file directory for storage emulator: C:\Users\jason\AppData\Local\Temp/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: C:\\Users\\jason\\AppData\\Local\\Temp/firebase/storage/blobs"}}
+[debug] [2025-08-22T16:31:53.046Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:53.046Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:53.047Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/bandflow2025/sites 
+[debug] [2025-08-22T16:31:53.934Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/bandflow2025/sites 200
+[debug] [2025-08-22T16:31:53.935Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/bandflow2025/sites {"sites":[{"name":"projects/bandflow2025/sites/bandflow2025","defaultUrl":"https://bandflow2025.web.app","appId":"1:146111307675:web:b8f7aa40d33b0e21994b3e","type":"DEFAULT_SITE"}]}
+[debug] [2025-08-22T16:31:53.935Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:53.935Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:53.935Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/webApps/1:146111307675:web:b8f7aa40d33b0e21994b3e/config [none]
+[debug] [2025-08-22T16:31:54.652Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/webApps/1:146111307675:web:b8f7aa40d33b0e21994b3e/config 200
+[debug] [2025-08-22T16:31:54.653Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025/webApps/1:146111307675:web:b8f7aa40d33b0e21994b3e/config {"projectId":"bandflow2025","appId":"1:146111307675:web:b8f7aa40d33b0e21994b3e","storageBucket":"bandflow2025.firebasestorage.app","apiKey":"AIzaSyAoRzr1ZyidP8UZVawOVvc0jx9jMYi1cis","authDomain":"bandflow2025.firebaseapp.com","messagingSenderId":"146111307675","measurementId":"G-4C9XEXTQ93"}
+[debug] [2025-08-22T16:31:54.668Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:54.668Z] Checked if tokens are valid: true, expires at: 1755883201090
+[debug] [2025-08-22T16:31:54.669Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025 [none]
+[debug] [2025-08-22T16:31:54.956Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025 200
+[debug] [2025-08-22T16:31:54.957Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bandflow2025 {"projectId":"bandflow2025","projectNumber":"146111307675","displayName":"bndy","name":"projects/bandflow2025","resources":{"hostingSite":"bandflow2025"},"state":"ACTIVE","etag":"1_8c2d21fc-7ddc-46a9-876a-882e798cbe82"}
+[info] i  hosting[bandflow2025]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[bandflow2025]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2025-08-22T16:31:54.996Z] [Extensions] Connecting Extensions emulator, this is a noop.
+[info] i  functions: Watching "C:\VSProjects\bndy-portal\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\VSProjects\\bndy-portal\\functions\" for Cloud Functions..."}}
+[debug] [2025-08-22T16:31:55.006Z] Validating nodejs source
+[debug] [2025-08-22T16:31:56.268Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-08-22T16:31:56.269Z] Building nodejs source
+[debug] [2025-08-22T16:31:56.269Z] Failed to find version of module node: reached end of search path C:\VSProjects\bndy-portal\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2025-08-22T16:31:56.273Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-22T16:31:56.282Z] Found firebase-functions binary at 'C:\VSProjects\bndy-portal\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8462
+
+[debug] [2025-08-22T16:31:56.841Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-08-22T16:31:56.872Z] defaultcredentials: writing to file C:\Users\jason\AppData\Roaming\firebase\jason_flowency_co.uk_application_default_credentials.json
+[debug] [2025-08-22T16:31:56.874Z] Setting GAC to C:\Users\jason\AppData\Roaming\firebase\jason_flowency_co.uk_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\jason\\AppData\\Roaming\\firebase\\jason_flowency_co.uk_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[debug] [2025-08-22T16:31:56.883Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED ::1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬──────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI              │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth       │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions  │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore  │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5000 │ n/a                              │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Storage        │ 127.0.0.1:9199 │ http://127.0.0.1:4000/storage    │
+├────────────────┼────────────────┼──────────────────────────────────┤
+│ Extensions     │ 127.0.0.1:5001 │ http://127.0.0.1:4000/extensions │
+└────────────────┴────────────────┴──────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+┌─────────────────────────┬───────────────┬─────────────────────┐
+│ Extension Instance Name │ Extension Ref │ View in Emulator UI │
+└─────────────────────────┴───────────────┴─────────────────────┘
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-08-22T16:32:22.993Z] Received signal SIGHUP 1
+[info]  
+[info] i  emulators: Received SIGHUP for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGHUP signal again to stop right now. 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  extensions: Stopping Extensions Emulator {"metadata":{"emulator":{"name":"extensions"},"message":"Stopping Extensions Emulator"}}
+[debug] [2025-08-22T16:32:22.999Z] [Extensions] Stopping Extensions emulator, this is a noop.
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  hosting: Stopping Hosting Emulator {"metadata":{"emulator":{"name":"hosting"},"message":"Stopping Hosting Emulator"}}
+[info] i  firestore: Stopping Firestore Emulator {"metadata":{"emulator":{"name":"firestore"},"message":"Stopping Firestore Emulator"}}
+[warn] !  Firestore Emulator has exited upon receiving signal: SIGINT 
+[info] i  auth: Stopping Authentication Emulator {"metadata":{"emulator":{"name":"auth"},"message":"Stopping Authentication Emulator"}}
+[info] i  storage: Stopping Storage Emulator {"metadata":{"emulator":{"name":"storage"},"message":"Stopping Storage Emulator"}}
+[debug] [2025-08-22T16:32:23.011Z] Stopping rules runtime. {"metadata":{"emulator":{"name":"storage"},"message":"Stopping rules runtime."}}
+[info] i  eventarc: Stopping Eventarc Emulator {"metadata":{"emulator":{"name":"eventarc"},"message":"Stopping Eventarc Emulator"}}
+[info] i  tasks: Stopping Cloud Tasks Emulator {"metadata":{"emulator":{"name":"tasks"},"message":"Stopping Cloud Tasks Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2025-08-22T16:32:23.022Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED ::1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.

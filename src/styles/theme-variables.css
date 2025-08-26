@@ -1,0 +1,193 @@
+/* Theme Variables for bndy-portal */
+/* Mobile-first, edge-to-edge design approach matching bndy-backstage */
+
+:root {
+  /* CSS Variables are set dynamically by ThemeContext */
+  /* This file provides defaults and mobile-specific optimizations */
+  
+  /* Safe area insets for mobile edge-to-edge design */
+  --safe-area-inset-top: env(safe-area-inset-top, 0px);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-inset-left: env(safe-area-inset-left, 0px);
+  --safe-area-inset-right: env(safe-area-inset-right, 0px);
+  
+  /* Mobile viewport variables */
+  --viewport-height: 100dvh;
+  --content-height: calc(100dvh - var(--safe-area-inset-top) - var(--safe-area-inset-bottom));
+  
+  /* Mobile spacing scale */
+  --mobile-padding: 1rem;
+  --mobile-gap: 0.75rem;
+  --mobile-touch-target: 44px;
+  
+  /* Desktop spacing scale */
+  --desktop-padding: 1.5rem;
+  --desktop-gap: 1rem;
+  
+  /* Animation variables matching bndy-backstage */
+  --animation-fast: 150ms;
+  --animation-normal: 300ms;
+  --animation-slow: 500ms;
+  --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --animation-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Border radius scale */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  
+  /* Shadow scale for depth */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Z-index scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  :root {
+    /* Larger touch targets on mobile */
+    --mobile-touch-target: 48px;
+    
+    /* Adjust spacing for smaller screens */
+    --mobile-padding: 0.875rem;
+    --mobile-gap: 0.5rem;
+  }
+  
+  /* Edge-to-edge content on mobile */
+  body {
+    margin: 0;
+    padding: 0;
+    height: var(--viewport-height);
+    overflow-x: hidden;
+  }
+  
+  /* Ensure all full-height containers use safe content height */
+  .min-h-screen {
+    min-height: var(--content-height);
+  }
+  
+  .h-screen {
+    height: var(--content-height);
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 769px) {
+  :root {
+    /* Desktop spacing adjustments */
+    --desktop-padding: 2rem;
+    --desktop-gap: 1.25rem;
+  }
+}
+
+/* Theme-specific overrides */
+.dark {
+  /* Dark theme shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+/* Feature color utilities */
+.feature-profile {
+  background-color: var(--profile-bg);
+  color: var(--profile-text);
+  border-color: var(--profile-border);
+}
+
+.feature-profile:hover {
+  background-color: var(--profile-hover);
+}
+
+.feature-music {
+  background-color: var(--music-bg);
+  color: var(--music-text);
+  border-color: var(--music-border);
+}
+
+.feature-music:hover {
+  background-color: var(--music-hover);
+}
+
+.feature-calendar {
+  background-color: var(--calendar-bg);
+  color: var(--calendar-text);
+  border-color: var(--calendar-border);
+}
+
+.feature-calendar:hover {
+  background-color: var(--calendar-hover);
+}
+
+.feature-media {
+  background-color: var(--media-bg);
+  color: var(--media-text);
+  border-color: var(--media-border);
+}
+
+.feature-media:hover {
+  background-color: var(--media-hover);
+}
+
+.feature-social {
+  background-color: var(--social-bg);
+  color: var(--social-text);
+  border-color: var(--social-border);
+}
+
+.feature-social:hover {
+  background-color: var(--social-hover);
+}
+
+.feature-members {
+  background-color: var(--members-bg);
+  color: var(--members-text);
+  border-color: var(--members-border);
+}
+
+.feature-members:hover {
+  background-color: var(--members-hover);
+}
+
+.feature-settings {
+  background-color: var(--settings-bg);
+  color: var(--settings-text);
+  border-color: var(--settings-border);
+}
+
+.feature-settings:hover {
+  background-color: var(--settings-hover);
+}
+
+/* Mobile touch target utilities */
+.touch-target {
+  min-height: var(--mobile-touch-target);
+  min-width: var(--mobile-touch-target);
+}
+
+/* Edge-to-edge utilities */
+.edge-to-edge {
+  margin-left: calc(-1 * var(--safe-area-inset-left));
+  margin-right: calc(-1 * var(--safe-area-inset-right));
+  padding-left: calc(var(--mobile-padding) + var(--safe-area-inset-left));
+  padding-right: calc(var(--mobile-padding) + var(--safe-area-inset-right));
+}
+
+.safe-top {
+  padding-top: var(--safe-area-inset-top);
+}
+
+.safe-bottom {
+  padding-bottom: var(--safe-area-inset-bottom);
+}

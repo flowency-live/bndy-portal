@@ -1,0 +1,56 @@
+/* app/theme.css */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --bndy-orange: #f97316;
+  --bndy-orange-hover: #ea580c;
+  --bndy-dark-blue: #1e293b;
+  --bndy-darker-blue: #0f172a;
+  --bndy-light-gray: #f1f5f9;
+  --bndy-text-white: #f8fafc;
+  --bndy-text-gray: #94a3b8;
+  
+  /* Component variables */
+  --primary: var(--bndy-orange);
+  --primary-foreground: white;
+  --primary-hover: var(--bndy-orange-hover);
+  
+  /* Background colors */
+  --background: white;
+  --foreground: var(--bndy-dark-blue);
+  --foreground-muted: #64748b;
+  --border: #e2e8f0;
+}
+
+/* Dark theme */
+.dark {
+  --background: var(--bndy-dark-blue);
+  --foreground: var(--bndy-text-white); 
+  --foreground-muted: var(--bndy-text-gray);
+  --border: #334155;
+}
+
+/* Basic styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Basic button styles */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
