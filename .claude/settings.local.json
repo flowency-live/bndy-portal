@@ -54,7 +54,10 @@
       "Read(/C:\\c\\VSProjects/**)",
       "Read(/C:\\c\\VSProjects/**)",
       "Read(/C:\\c\\VSProjects/**)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git remote add:*)"
     ],
     "deny": [],
     "ask": [],
