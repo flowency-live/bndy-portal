@@ -3,7 +3,7 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { useAuth } from 'bndy-ui/auth';
 import { useRouter } from 'next/navigation';
-import { BndyLoadingScreen } from 'bndy-ui';
+import { BndyLoadingScreen, ThinFooter } from 'bndy-ui';
 import { ErrorBoundary } from '../ErrorBoundary';
 import { AppHeader } from './AppHeader';
 import { Sidebar } from './Sidebar';
@@ -72,27 +72,26 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     <ErrorBoundary>
       <div 
         data-testid="main-layout" 
-        className="min-h-screen flex bg-[var(--theme-background)] text-[var(--theme-foreground)] safe-top"
-        style={{ background: 'var(--theme-background)' }}
+        className="min-h-screen flex flex-col bg-[var(--theme-background)] text-[var(--theme-foreground)] safe-top"
       >
-        {/* Sidebar */}
-        <Sidebar isOpen={sidebarOpen} onClose={handleCloseSidebar} />
+        {/* Header - Full width */}
+        <AppHeader onToggleSidebar={handleToggleSidebar} />
+        
+        <div className="flex flex-1 pt-16">
+          {/* Sidebar */}
+          <Sidebar isOpen={sidebarOpen} onClose={handleCloseSidebar} />
 
-        {/* Mobile sidebar overlay */}
-        {sidebarOpen && (
-          <div
-            data-testid="sidebar-overlay"
-            className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
-            onClick={handleCloseSidebar}
-          />
-        )}
+          {/* Mobile sidebar overlay */}
+          {sidebarOpen && (
+            <div
+              data-testid="sidebar-overlay"
+              className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+              onClick={handleCloseSidebar}
+            />
+          )}
 
-        {/* Main content area */}
-        <div className="flex-1 flex flex-col">
-          {/* Header */}
-          <header role="banner">
-            <AppHeader onToggleSidebar={handleToggleSidebar} />
-          </header>
+          {/* Main content area */}
+          <div className="flex-1 flex flex-col">
 
           {/* Main content */}
           <main 
@@ -103,7 +102,11 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               {children}
             </ErrorBoundary>
           </main>
+          </div>
         </div>
+        
+        {/* Footer - Full width at bottom */}
+        <ThinFooter badgePath="/assets/images/BndyBeatBadge.png" />
       </div>
     </ErrorBoundary>
   );

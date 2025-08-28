@@ -50,6 +50,13 @@ vi.mock('../AppHeader', () => ({
   )
 }));
 
+// Mock react-icons/fa for the heart icon used in footer
+vi.mock('react-icons/fa', () => ({
+  FaHeart: ({ className, ...props }: any) => (
+    <div data-testid="heart-icon" className={className} {...props}>❤️</div>
+  )
+}));
+
 vi.mock('../Sidebar', () => ({
   Sidebar: ({ isOpen, onClose }: any) => (
     <div data-testid="sidebar" data-open={isOpen}>
@@ -155,6 +162,7 @@ describe('MainLayout', () => {
       expect(screen.getByRole('banner')).toBeInTheDocument(); // header
       expect(screen.getByRole('navigation')).toBeInTheDocument(); // sidebar nav
       expect(screen.getByRole('main')).toBeInTheDocument(); // main content
+      expect(screen.getByRole('contentinfo')).toBeInTheDocument(); // footer
     });
 
     it('should apply mobile-first edge-to-edge classes', () => {
@@ -344,6 +352,43 @@ describe('MainLayout', () => {
     });
   });
 
+  describe('Footer', () => {
+    it('should render footer with copyright and bndy beat badge', () => {
+      render(
+        <TestWrapper>
+          <MainLayout>
+            <div>Test Content</div>
+          </MainLayout>
+        </TestWrapper>
+      );
+
+      const footer = screen.getByRole('contentinfo');
+      expect(footer).toBeInTheDocument();
+      
+      // Check for bndy beat badge with heart icon
+      expect(screen.getByTestId('heart-icon')).toBeInTheDocument();
+      expect(screen.getByText(/bndy beat/i)).toBeInTheDocument();
+      
+      // Check for copyright text with current year
+      const currentYear = new Date().getFullYear().toString();
+      expect(screen.getByText(new RegExp(`© ${currentYear} BNDY`, 'i'))).toBeInTheDocument();
+    });
+    
+    it('should have proper styling classes for footer', () => {
+      render(
+        <TestWrapper>
+          <MainLayout>
+            <div>Test Content</div>
+          </MainLayout>
+        </TestWrapper>
+      );
+
+      const footer = screen.getByRole('contentinfo');
+      expect(footer).toHaveClass('border-t');
+      expect(footer).toHaveClass('py-6');
+    });
+  });
+
   describe('Theme Integration', () => {
     it('should apply theme-aware background colors', () => {
       render(
@@ -357,7 +402,7 @@ describe('MainLayout', () => {
       const layout = screen.getByTestId('main-layout');
       
       // Should use CSS variables for theming
-      expect(layout.style.getPropertyValue('background')).toContain('var(--theme-background)');
+      expect(layout).toHaveClass('bg-[var(--theme-background)]');
     });
 
     it('should pass theme context to child components', () => {

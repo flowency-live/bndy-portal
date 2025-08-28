@@ -1,4 +1,97 @@
 @import "tailwindcss";
+
+@theme {
+  /* Color System - using CSS variables set by ThemeContext */
+  --color-background: var(--theme-background);
+  --color-foreground: var(--theme-foreground);
+  --color-card: var(--theme-card);
+  --color-card-foreground: var(--theme-card-foreground);
+  --color-popover: var(--theme-popover);
+  --color-popover-foreground: var(--theme-popover-foreground);
+  --color-primary: var(--theme-primary);
+  --color-primary-foreground: var(--theme-primary-foreground);
+  --color-secondary: var(--theme-secondary);
+  --color-secondary-foreground: var(--theme-secondary-foreground);
+  --color-muted: var(--theme-muted);
+  --color-muted-foreground: var(--theme-muted-foreground);
+  --color-accent: var(--theme-accent);
+  --color-accent-foreground: var(--theme-accent-foreground);
+  --color-destructive: var(--theme-destructive);
+  --color-destructive-foreground: var(--theme-destructive-foreground);
+  --color-border: var(--theme-border);
+  --color-input: var(--theme-input);
+  --color-ring: var(--theme-ring);
+
+  /* BNDY Brand Colors */
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-cyan-500: #06b6d4;
+  
+  /* Feature Colors - Profile */
+  --color-profile-bg: var(--profile-bg);
+  --color-profile-text: var(--profile-text);
+  --color-profile-border: var(--profile-border);
+  --color-profile-hover: var(--profile-hover);
+  
+  /* Feature Colors - Music */
+  --color-music-bg: var(--music-bg);
+  --color-music-text: var(--music-text);
+  --color-music-border: var(--music-border);
+  --color-music-hover: var(--music-hover);
+  
+  /* Feature Colors - Calendar */
+  --color-calendar-bg: var(--calendar-bg);
+  --color-calendar-text: var(--calendar-text);
+  --color-calendar-border: var(--calendar-border);
+  --color-calendar-hover: var(--calendar-hover);
+  
+  /* Feature Colors - Media */
+  --color-media-bg: var(--media-bg);
+  --color-media-text: var(--media-text);
+  --color-media-border: var(--media-border);
+  --color-media-hover: var(--media-hover);
+  
+  /* Feature Colors - Social */
+  --color-social-bg: var(--social-bg);
+  --color-social-text: var(--social-text);
+  --color-social-border: var(--social-border);
+  --color-social-hover: var(--social-hover);
+  
+  /* Feature Colors - Members */
+  --color-members-bg: var(--members-bg);
+  --color-members-text: var(--members-text);
+  --color-members-border: var(--members-border);
+  --color-members-hover: var(--members-hover);
+  
+  /* Feature Colors - Settings */
+  --color-settings-bg: var(--settings-bg);
+  --color-settings-text: var(--settings-text);
+  --color-settings-border: var(--settings-border);
+  --color-settings-hover: var(--settings-hover);
+  
+  /* Spacing Scale */
+  --spacing-mobile-padding: var(--mobile-padding);
+  --spacing-mobile-gap: var(--mobile-gap);
+  --spacing-desktop-padding: var(--desktop-padding);
+  --spacing-desktop-gap: var(--desktop-gap);
+  
+  /* Border Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  
+  /* Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  
+  /* Animation Timing */
+  --animate-fast: var(--animation-fast);
+  --animate-normal: var(--animation-normal);
+  --animate-slow: var(--animation-slow);
+}
+
 @import "../styles/theme-variables.css";
 
 /* Base styling with mobile-first approach */

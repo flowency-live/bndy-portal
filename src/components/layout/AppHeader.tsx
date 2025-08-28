@@ -1,10 +1,12 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { BndyLogo } from 'bndy-ui';
 import { useAuth } from 'bndy-ui/auth';
 import { useTheme } from '../../context/ThemeContext';
-import { FaSun, FaMoon, FaBell, FaBars, FaMusic, FaHome } from 'react-icons/fa';
+import { FaMoon, FaBell, FaBars, FaMusic, FaHome } from 'react-icons/fa';
+import { SunIcon } from '@heroicons/react/24/solid';
 
 interface AppHeaderProps {
   onToggleSidebar: () => void;
@@ -37,25 +39,37 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
       <header 
         role="banner"
         data-testid="app-header" 
-        className="bg-slate-800 border-b border-slate-700 mobile-edge mobile-safe-padding py-3"
+        className={`${isDark ? 'bg-slate-900' : 'bg-white'} border-b ${isDark ? 'border-slate-700' : 'border-slate-200'} py-4 w-full`}
       >
-        <div data-testid="header-content" className="flex items-center justify-between">
-          <BndyLogo 
-            className="w-8 h-8" 
-            color="#f97316" 
-            holeColor={isDark ? '#1e293b' : '#f8fafc'} 
-          />
-          
-          {/* Theme toggle always visible */}
-          <button
-            data-testid="theme-toggle"
-            onClick={toggleTheme}
-            onKeyDown={(e) => handleKeyDown(e, toggleTheme)}
-            aria-label="Toggle theme"
-            className="min-h-[44px] p-2 text-slate-400 hover:text-white rounded-md transition-colors touch-target"
-          >
-            {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
-          </button>
+        <div data-testid="header-content" className="max-w-screen-2xl mx-auto flex justify-between items-center px-6">
+          <div className="flex items-center">
+            <BndyLogo 
+              className="h-12 w-12" 
+              color="#f97316" 
+              holeColor={isDark ? '#0f172a' : '#ffffff'} 
+            />
+          </div>
+          <div className="flex items-center space-x-2">
+            {/* Sign In Button */}
+            <Link
+              href="/auth"
+              data-testid="sign-in-button"
+              className="min-h-[44px] px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-md transition-colors touch-target flex items-center"
+            >
+              Sign In
+            </Link>
+            
+            {/* Theme toggle */}
+            <button
+              data-testid="theme-toggle"
+              onClick={toggleTheme}
+              onKeyDown={(e) => handleKeyDown(e, toggleTheme)}
+              aria-label="Toggle theme"
+              className={`min-h-[44px] p-2 ${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-600 hover:text-slate-900'} rounded-md transition-colors touch-target`}
+            >
+              {isDark ? <SunIcon className="w-5 h-5" /> : <FaMoon size={20} />}
+            </button>
+          </div>
         </div>
       </header>
     );
@@ -67,24 +81,37 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
       <header 
         role="banner"
         data-testid="app-header" 
-        className="bg-slate-800 border-b border-slate-700 mobile-edge mobile-safe-padding py-3"
+        className={`${isDark ? 'bg-slate-900' : 'bg-white'} border-b ${isDark ? 'border-slate-700' : 'border-slate-200'} py-4 w-full`}
       >
-        <div data-testid="header-content" className="flex items-center justify-between">
-          <BndyLogo 
-            className="w-8 h-8" 
-            color="#f97316" 
-            holeColor={isDark ? '#1e293b' : '#f8fafc'} 
-          />
-          
-          <button
-            data-testid="theme-toggle"
-            onClick={toggleTheme}
-            onKeyDown={(e) => handleKeyDown(e, toggleTheme)}
-            aria-label="Toggle theme"
-            className="min-h-[44px] p-2 text-slate-400 hover:text-white rounded-md transition-colors touch-target"
-          >
-            {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
-          </button>
+        <div data-testid="header-content" className="max-w-screen-2xl mx-auto flex justify-between items-center px-6">
+          <div className="flex items-center">
+            <BndyLogo 
+              className="h-12 w-12" 
+              color="#f97316" 
+              holeColor={isDark ? '#0f172a' : '#ffffff'} 
+            />
+          </div>
+          <div className="flex items-center space-x-2">
+            {/* Sign In Button (loading state) */}
+            <Link
+              href="/auth"
+              data-testid="sign-in-button"
+              className="min-h-[44px] px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-md transition-colors touch-target flex items-center opacity-75"
+            >
+              Sign In
+            </Link>
+            
+            {/* Theme toggle */}
+            <button
+              data-testid="theme-toggle"
+              onClick={toggleTheme}
+              onKeyDown={(e) => handleKeyDown(e, toggleTheme)}
+              aria-label="Toggle theme"
+              className={`min-h-[44px] p-2 ${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-600 hover:text-slate-900'} rounded-md transition-colors touch-target`}
+            >
+              {isDark ? <SunIcon className="w-5 h-5" /> : <FaMoon size={20} />}
+            </button>
+          </div>
         </div>
       </header>
     );
@@ -92,95 +119,66 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
 
   // Full authenticated header
   return (
-    <header 
-      role="banner"
-      data-testid="app-header" 
-      className="bg-slate-800 border-b border-slate-700 mobile-edge mobile-safe-padding py-3"
+    <header
+      data-testid="app-header"
+      className={`fixed top-0 left-0 right-0 z-40 h-16 ${isDark ? 'bg-slate-900' : 'bg-white'} border-b ${isDark ? 'border-slate-700' : 'border-slate-200'} flex items-center px-4 md:px-6`}
     >
-      <div data-testid="header-content" className="flex items-center justify-between">
-        {/* Left section: Logo + Context */}
-        <div className="flex items-center space-x-4">
-          <BndyLogo 
-            className="w-8 h-8" 
-            color="#f97316" 
-            holeColor={isDark ? '#1e293b' : '#f8fafc'} 
-          />
-          
-          {/* Desktop Context Display */}
-          <div data-testid="context-desktop" className="hidden md:flex items-center text-slate-300">
-            {context === 'backstage' && artistName ? (
-              <>
-                <span className="text-orange-500 font-medium">Backstage</span>
-                <span className="mx-2 text-slate-500">|</span>
-                <span>{artistName}</span>
-              </>
-            ) : (
-              <span>Dashboard</span>
-            )}
-          </div>
+      {/* Mobile menu button */}
+      <button
+        data-testid="hamburger-menu"
+        onClick={onToggleSidebar}
+        className={`md:hidden p-2 ${isDark ? 'text-slate-300 hover:text-white' : 'text-slate-600 hover:text-slate-900'} min-h-[44px] touch-target mr-4`}
+        aria-label="Open navigation menu"
+      >
+        <FaBars size={24} />
+      </button>
 
-          {/* Mobile Context Pills */}
-          <div 
-            data-testid="context-pill-mobile"
-            className="md:hidden flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-orange-600/20 to-orange-500/10 border border-orange-500/30 animate-pulse"
-          >
-            {context === 'backstage' ? (
-              <>
-                <FaMusic size={14} className="text-orange-500 mr-2" />
-                <span className="text-orange-300 text-sm font-medium">Backstage</span>
-              </>
-            ) : (
-              <>
-                <FaHome size={14} className="text-orange-500 mr-2" />
-                <span className="text-orange-300 text-sm font-medium">Dashboard</span>
-              </>
-            )}
-          </div>
-        </div>
+      {/* BNDY Logo with dashboard link */}
+      <Link href="/dashboard" className="flex items-center mr-4">
+        <BndyLogo 
+          className="h-10 w-auto" 
+          color="#f97316" 
+          holeColor={isDark ? '#0f172a' : '#ffffff'} 
+        />
+      </Link>
 
-        {/* Right section: Actions */}
-        <div className="flex items-center space-x-2">
-          {/* Notification Bell */}
-          <div className="relative">
-            <button
-              data-testid="notification-bell"
-              onClick={onNotificationClick}
-              onKeyDown={(e) => handleKeyDown(e, onNotificationClick || (() => {}))}
-              aria-label="View notifications"
-              className="min-h-[44px] p-2 text-slate-400 hover:text-white rounded-md transition-colors touch-target relative"
-            >
-              <FaBell size={20} />
-              {hasNotifications && (
-                <div 
-                  data-testid="notification-indicator"
-                  className="absolute top-1 right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-slate-800"
-                />
-              )}
-            </button>
-          </div>
+      {/* Title separator */}
+      <div className="flex-1 flex items-center">
+        <span className={`${isDark ? 'text-slate-500' : 'text-slate-400'} font-medium`}>|</span>
+        <span className={`ml-3 ${isDark ? 'text-slate-200' : 'text-slate-800'} font-medium`}>User Dashboard</span>
+      </div>
 
-          {/* Theme Toggle */}
+      {/* Right section: Actions */}
+      <div className="flex items-center space-x-4">
+        {/* Notification Bell */}
+        <div className="relative">
           <button
-            data-testid="theme-toggle"
-            onClick={toggleTheme}
-            onKeyDown={(e) => handleKeyDown(e, toggleTheme)}
-            aria-label="Toggle theme"
-            className="min-h-[44px] p-2 text-slate-400 hover:text-white rounded-md transition-colors touch-target"
+            data-testid="notification-bell"
+            onClick={onNotificationClick}
+            onKeyDown={(e) => handleKeyDown(e, onNotificationClick || (() => {}))}
+            aria-label="View notifications"
+            className={`p-2 ${isDark ? 'text-slate-300 hover:text-white' : 'text-slate-600 hover:text-slate-900'} focus:outline-none focus:ring-2 focus:ring-inset ${isDark ? 'focus:ring-white' : 'focus:ring-slate-800'} touch-target relative`}
           >
-            {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
-          </button>
-
-          {/* Mobile Hamburger Menu */}
-          <button
-            data-testid="hamburger-menu"
-            onClick={onToggleSidebar}
-            onKeyDown={(e) => handleKeyDown(e, onToggleSidebar)}
-            aria-label="Toggle navigation menu"
-            className="md:hidden min-h-[44px] p-2 text-slate-400 hover:text-white rounded-md transition-colors touch-target"
-          >
-            <FaBars size={20} />
+            <FaBell size={22} />
+            {hasNotifications && (
+              <div 
+                data-testid="notification-indicator"
+                className={`absolute top-1 right-1 w-3 h-3 bg-red-500 rounded-full border-2 ${isDark ? 'border-slate-900' : 'border-white'}`}
+              />
+            )}
           </button>
         </div>
+
+        {/* Theme Toggle */}
+        <button
+          data-testid="theme-toggle"
+          onClick={toggleTheme}
+          onKeyDown={(e) => handleKeyDown(e, toggleTheme)}
+          aria-label="Toggle theme"
+          className={`min-h-[44px] p-2 ${isDark ? 'text-slate-300 hover:text-white' : 'text-slate-600 hover:text-slate-900'} rounded-md transition-colors touch-target`}
+        >
+          {isDark ? <SunIcon className="w-5 h-5" /> : <FaMoon size={20} />}
+        </button>
       </div>
     </header>
   );

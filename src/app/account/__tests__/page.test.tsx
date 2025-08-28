@@ -19,9 +19,10 @@ vi.mock('bndy-ui', () => ({
 }));
 
 // Mock bndy-ui/auth
+const mockUseAuth = vi.fn();
 vi.mock('bndy-ui/auth', () => ({
   AuthProvider: ({ children, ...props }: any) => children,
-  useAuth: vi.fn()
+  useAuth: () => mockUseAuth()
 }));
 
 // Mock ProfileTab component
@@ -48,8 +49,7 @@ const mockRouter = {
   refresh: vi.fn(),
 };
 
-// Import useAuth after mocking
-import { useAuth } from 'bndy-ui/auth';
+// useAuth is already mocked above
 
 describe('AccountPage', () => {
   beforeEach(() => {
@@ -59,7 +59,7 @@ describe('AccountPage', () => {
 
   it('should redirect unauthenticated users to login', async () => {
     // Mock useAuth to return unauthenticated state
-    (useAuth as any).mockReturnValue({
+    mockUseAuth.mockReturnValue({
       currentUser: null,
       isLoading: false,
       signOut: vi.fn(),
@@ -75,7 +75,7 @@ describe('AccountPage', () => {
   });
 
   it('should show loading state while authentication loads', async () => {
-    (useAuth as any).mockReturnValue({
+    mockUseAuth.mockReturnValue({
       currentUser: null,
       isLoading: true,
       signOut: vi.fn(),
@@ -97,7 +97,7 @@ describe('AccountPage', () => {
       emailVerified: true
     });
 
-    (useAuth as any).mockReturnValue({
+    mockUseAuth.mockReturnValue({
       currentUser: mockUser,
       isLoading: false,
       signOut: vi.fn(),
@@ -121,7 +121,7 @@ describe('AccountPage', () => {
       emailVerified: false
     });
 
-    (useAuth as any).mockReturnValue({
+    mockUseAuth.mockReturnValue({
       currentUser: mockUser,
       isLoading: false,
       signOut: vi.fn(),
@@ -146,7 +146,7 @@ describe('AccountPage', () => {
     const mockUser = createMockUser();
     const mockSignOut = vi.fn();
 
-    (useAuth as any).mockReturnValue({
+    mockUseAuth.mockReturnValue({
       currentUser: mockUser,
       isLoading: false,
       signOut: mockSignOut,
@@ -164,7 +164,7 @@ describe('AccountPage', () => {
   it('should allow switching between tabs', async () => {
     const mockUser = createMockUser();
 
-    (useAuth as any).mockReturnValue({
+    mockUseAuth.mockReturnValue({
       currentUser: mockUser,
       isLoading: false,
       signOut: vi.fn(),
@@ -196,7 +196,7 @@ describe('AccountPage', () => {
   it('should be mobile responsive with proper touch targets', async () => {
     const mockUser = createMockUser();
 
-    (useAuth as any).mockReturnValue({
+    mockUseAuth.mockReturnValue({
       currentUser: mockUser,
       isLoading: false,
       signOut: vi.fn(),

@@ -1,12 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { BndyLogo } from 'bndy-ui';
 import { useAuth } from 'bndy-ui/auth';
 import { useTheme } from '../../context/ThemeContext';
-import { FaHome, FaUser, FaCog, FaSignOutAlt, FaMusic, FaTimes } from 'react-icons/fa';
+import { FaHome, FaUser, FaCalendar, FaMusic, FaSignOutAlt, FaTimes } from 'react-icons/fa';
+import { Button } from 'bndy-ui';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -16,22 +17,28 @@ interface SidebarProps {
 interface NavItem {
   id: string;
   label: string;
-  path: string;
-  icon: React.ElementType;
+  href: string;
+  icon: React.ReactNode;
 }
 
 const navItems: NavItem[] = [
-  { id: 'dashboard', label: 'Dashboard', path: '/dashboard', icon: FaHome },
-  { id: 'profile', label: 'My Profile', path: '/profile', icon: FaUser },
-  { id: 'artists', label: 'My Artists', path: '/artists', icon: FaMusic },
-  { id: 'settings', label: 'Settings', path: '/settings', icon: FaCog },
+  { id: 'dashboard', label: 'My Dashboard', href: '/dashboard', icon: <FaHome size={20} /> },
+  { id: 'profile', label: 'My Profile', href: '/my-profile', icon: <FaUser size={20} /> },
+  { id: 'calendar', label: 'My Calendar', href: '/calendar', icon: <FaCalendar size={20} /> },
+  { id: 'artists', label: 'My Artists', href: '/artists', icon: <FaMusic size={20} /> },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const router = useRouter();
   const pathname = usePathname();
   const { currentUser, signOut } = useAuth();
-  const { isDark } = useTheme();
+  const { theme, isDark } = useTheme();
+  
+  // Update sidebar styling when theme changes
+  useEffect(() => {
+    // The dark mode classes are applied automatically through Tailwind's dark mode
+    // This effect ensures the component re-renders when theme changes
+  }, [theme, isDark]);
 
   const handleNavigation = (path: string) => {
     router.push(path);
@@ -45,7 +52,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     }
   };
 
-  const handleLogout = async () => {
+  const handleSignOut = async () => {
     try {
       await signOut();
     } catch (error) {
@@ -53,134 +60,131 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     }
   };
 
-  const getInitials = (name: string | null, email: string) => {
-    if (name) {
-      return name
-        .split(' ')
-        .map(word => word.charAt(0).toUpperCase())
-        .slice(0, 2)
-        .join('');
+  const getInitials = (input: string) => {
+    if (!input) return '';
+    
+    if (input.includes('@')) {
+      // It's an email
+      return input.slice(0, 2).toUpperCase();
     }
-    return email.slice(0, 2).toUpperCase();
+    
+    // It's a name
+    return input
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase())
+      .slice(0, 2)
+      .join('');
   };
 
   return (
-    <aside
-      data-testid="sidebar"
-      data-open={isOpen}
-      className={`
-        fixed top-0 left-0 z-50 w-64 h-full bg-slate-800 border-r border-slate-700 
-        transform transition-transform duration-300 ease-in-out
-        md:relative md:transform-none
-        ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-      `}
-    >
-      <div className="p-4 h-full flex flex-col">
-        {/* Header Section */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center space-x-3">
-            <BndyLogo 
-              className="w-8 h-8" 
-              color="#f97316" 
-              holeColor={isDark ? '#1e293b' : '#f8fafc'} 
-            />
-            <span className="text-lg font-semibold text-white">BNDY</span>
-          </div>
-          <button
-            data-testid="close-sidebar"
-            onClick={onClose}
-            onKeyDown={(e) => handleKeyDown(e, onClose)}
-            aria-label="Close navigation menu"
-            className="min-h-[44px] p-2 text-slate-400 hover:text-white md:hidden touch-target rounded-md transition-colors"
-            tabIndex={0}
-          >
-            <FaTimes size={20} />
-          </button>
-        </div>
+    <>
+      {/* Mobile Overlay - this is the fix for mobile navigation */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={onClose}
+          aria-hidden="true"
+        />
+      )}
 
-        {/* User Profile Section */}
-        {currentUser && (
-          <div className="mb-6 p-3 bg-slate-700/50 rounded-lg">
-            <div className="flex items-center space-x-3">
-              <div className="relative">
-                {currentUser.photoURL ? (
-                  <Image
-                    data-testid="user-avatar"
-                    src={currentUser.photoURL}
-                    alt={currentUser.displayName || 'User avatar'}
-                    width={40}
-                    height={40}
-                    className="rounded-full"
-                  />
-                ) : (
-                  <div 
-                    data-testid="fallback-avatar"
-                    className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-semibold text-sm"
-                  >
-                    {getInitials(currentUser.displayName, currentUser.email || '')}
-                  </div>
+      <nav
+        data-testid="sidebar"
+        data-open={isOpen}
+        data-theme={theme}
+        aria-label="Main navigation"
+        className={`fixed md:sticky top-16 md:top-0 left-0 z-50 h-[calc(100vh-4rem)] md:h-auto 
+     w-64 flex flex-col ${isDark ? 'bg-slate-900' : 'bg-white'} border-r ${isDark ? 'border-slate-700' :
+     'border-slate-200'} transform transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0' :
+     '-translate-x-full'} md:translate-x-0`}
+   
+      >
+        {/* Mobile close button */}
+        <button
+          data-testid="close-sidebar"
+          onClick={onClose}
+          className={`md:hidden absolute top-4 right-4 p-2 ${isDark ? 'text-slate-300 hover:text-white' : 'text-slate-600 hover:text-slate-900'} min-h-[44px] touch-target`}
+          aria-label="Close navigation menu"
+        >
+          <FaTimes size={24} />
+        </button>
+        
+        {/* Navigation links */}
+        <div className="flex-1 overflow-y-auto pt-16 md:pt-4 px-3">
+          <nav data-testid="sidebar-nav">
+            <ul className="space-y-2 md:space-y-3">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                
+                return (
+                  <li key={item.id}>
+                    <Link
+                      href={item.href}
+                      data-testid={`nav-item-${item.id}`}
+                      className={`flex items-center px-3 py-2 rounded-md transition-colors duration-300 ${
+                        isActive
+                          ? `${isDark ? 'bg-slate-700 text-white' : 'bg-slate-200 text-slate-900'}`
+                          : `${isDark ? 'text-slate-300 hover:bg-slate-700 hover:text-white' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`
+                      }`}
+                      onClick={onClose}
+                    >
+                      <span className="mr-3">{item.icon}</span>
+                      <span className="font-medium text-sm md:text-base">{item.label}</span>
+                      {isActive && (
+                        <span className="ml-auto w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-orange-500" aria-hidden="true" />
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
+        
+        {/* Footer area with user profile and sign out */}
+        <div className="mt-auto">
+          <div className={`p-4 border-t ${isDark ? 'border-slate-700' : 'border-slate-200'} transition-colors duration-300`}>
+            {/* User profile */}
+            <div className={`flex items-center space-x-3 p-3 mb-3 ${isDark ? 'bg-slate-800/50' : 'bg-slate-100/80'} rounded-lg border ${isDark ? 'border-slate-600/30' : 'border-slate-300/30'} shadow-inner`}>
+              {currentUser?.photoURL ? (
+                <Image
+                  data-testid="user-avatar"
+                  src={currentUser.photoURL}
+                  alt="User avatar"
+                  width={48}
+                  height={48}
+                  className="rounded-full"
+                />
+              ) : (
+                <div
+                  data-testid="fallback-avatar"
+                  className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-medium text-lg shadow-sm"
+                >
+                  {getInitials(currentUser?.displayName || currentUser?.email || '')}
+                </div>
+              )}
+              <div className="flex-1 min-w-0">
+                {currentUser?.displayName && (
+                  <p className={`font-medium text-base truncate ${isDark ? 'text-white' : 'text-slate-900'}`}>{currentUser.displayName}</p>
+                )}
+                {currentUser?.email && (
+                  <p className={`text-sm truncate ${isDark ? 'text-slate-300' : 'text-slate-500'}`}>{currentUser.email}</p>
                 )}
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-white truncate">
-                  {currentUser.displayName || 'User'}
-                </p>
-                <p className="text-xs text-slate-400 truncate">
-                  {currentUser.email}
-                </p>
-              </div>
             </div>
-          </div>
-        )}
-        
-        {/* Navigation Section */}
-        <nav 
-          data-testid="sidebar-nav" 
-          role="navigation" 
-          aria-label="Main navigation"
-          className="flex-1 space-y-1"
-        >
-          {navItems.map((item) => {
-            const isActive = pathname === item.path;
-            const Icon = item.icon;
             
-            return (
-              <button
-                key={item.id}
-                data-testid={`nav-item-${item.id}`}
-                onClick={() => handleNavigation(item.path)}
-                onKeyDown={(e) => handleKeyDown(e, () => handleNavigation(item.path))}
-                className={`
-                  w-full flex items-center space-x-3 px-3 py-2 rounded-md transition-all touch-target
-                  ${isActive 
-                    ? 'bg-orange-500/10 border border-orange-500/30 text-orange-300' 
-                    : 'text-slate-300 hover:text-white hover:bg-slate-700'
-                  }
-                `}
-                tabIndex={0}
-              >
-                <Icon size={18} className={isActive ? 'text-orange-500' : 'text-slate-400'} />
-                <span className="font-medium">{item.label}</span>
-              </button>
-            );
-          })}
-        </nav>
-
-        {/* Logout Section */}
-        <div className="pt-4 border-t border-slate-700">
-          <button
-            data-testid="logout-button"
-            onClick={handleLogout}
-            onKeyDown={(e) => handleKeyDown(e, handleLogout)}
-            aria-label="Sign out"
-            className="w-full flex items-center space-x-3 px-3 py-2 text-slate-300 hover:text-red-400 hover:bg-red-500/10 rounded-md transition-colors touch-target"
-            tabIndex={0}
-          >
-            <FaSignOutAlt size={18} className="text-slate-400" />
-            <span className="font-medium">Sign Out</span>
-          </button>
+            {/* Sign out button */}
+            <button
+              data-testid="logout-button"
+              onClick={handleSignOut}
+              className="w-full flex items-center justify-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white border border-orange-600 rounded-md transition-all duration-200 font-medium shadow-sm hover:shadow-md"
+              style={{ backgroundColor: '#f97316', color: '#ffffff' }}
+            >
+              <FaSignOutAlt size={16} className="mr-2" style={{ color: '#ffffff' }} />
+              <span style={{ color: '#ffffff' }}>Sign Out</span>
+            </button>
+          </div>
         </div>
-      </div>
-    </aside>
+      </nav>
+    </>
   );
 };
